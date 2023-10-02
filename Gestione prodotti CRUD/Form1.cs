@@ -132,13 +132,26 @@ namespace Gestione_prodotti_CRUD
 
         public void Cancella()
         {
+            bool trovato= false;
             string B = textBox2.Text;
-            for (int i = 0; i < dim; i++)
+            int i = 0;
+            while(trovato==false)
             {
                 if (p[i].nome == B)
                 {
-                    
+                    trovato = true;
                 }
+                i++;
+            }
+            if (trovato == true)
+            {
+                for (int k = i-1; k < dim; k++)
+                {
+                    p[k].nome = p[k + 1].nome;
+                    p[k].prezzo = p[k + 1].prezzo;
+                }
+                
+                dim--;
             }
         }
 
