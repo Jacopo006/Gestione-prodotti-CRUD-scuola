@@ -92,7 +92,6 @@ namespace Gestione_prodotti_CRUD
                 if (p[i].nome == a)
                 {
                     p[i].nome = modificadelprodotto.Text;
-                    //
                 }
             }
 
@@ -111,10 +110,38 @@ namespace Gestione_prodotti_CRUD
           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Visualizza();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Visualizza();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cancella();
+        }
+
+        public void Cancella()
+        {
+            string B = textBox2.Text;
+            for (int i = 0; i < dim; i++)
+            {
+                if (p[i].nome == B)
+                {
+                    
+                }
+            }
+        }
+
 
     }
 }
