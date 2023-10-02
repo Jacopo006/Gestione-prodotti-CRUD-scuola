@@ -92,6 +92,7 @@ namespace Gestione_prodotti_CRUD
                 if (p[i].nome == a)
                 {
                     p[i].nome = modificadelprodotto.Text;
+                    //
                 }
             }
 
