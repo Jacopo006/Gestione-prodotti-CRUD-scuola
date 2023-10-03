@@ -55,7 +55,7 @@ namespace Gestione_prodotti_CRUD
         private void INSERISCI_Click(object sender, EventArgs e)
         {
             Aggiunta();
-            Modifica();
+            Visualizza();
         }
 
 
@@ -64,7 +64,7 @@ namespace Gestione_prodotti_CRUD
             ELENCO.Items.Clear();
             for (int i = 0; i < dim; i++)
             {
-                ELENCO.Items.Add($" {p[i].nome} {p[i].prezzo}");
+                ELENCO.Items.Add($"il nome è: {p[i].nome} e il prezzo è: {p[i].prezzo}");
             }
         }
 
@@ -81,6 +81,7 @@ namespace Gestione_prodotti_CRUD
         private void MODIFICA_PRODOTTO_Click(object sender, EventArgs e)
         {
             Modifica();
+            Visualizza();
         }
 
         public void Modifica()
@@ -92,6 +93,7 @@ namespace Gestione_prodotti_CRUD
                 if (p[i].nome == a)
                 {
                     p[i].nome = modificadelprodotto.Text;
+                    p[i].prezzo = float.Parse(textBox3.Text);
                 }
             }
 
@@ -128,6 +130,7 @@ namespace Gestione_prodotti_CRUD
         private void button1_Click(object sender, EventArgs e)
         {
             Cancella();
+            Visualizza();
         }
 
         public void Cancella()
@@ -155,7 +158,10 @@ namespace Gestione_prodotti_CRUD
             }
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 
