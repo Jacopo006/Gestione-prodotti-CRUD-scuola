@@ -162,6 +162,55 @@ namespace Gestione_prodotti_CRUD
         {
 
         }
+        private void Alfabetico()
+        {
+            string a;
+            for (int i = 0; i < dim; i++)
+            {
+                for (int j = i + 1; j < dim; j++)
+                {
+
+                    if (p[i].nome.Length < p[j].nome.Length)
+                    {
+                        Convert.ToChar(p[i].nome[i]);
+                        Convert.ToChar(p[j].nome[i]);
+                        for (int k = 0; k < p[i].nome.Length; k++)
+                        {
+                            if (p[i].nome[k] < p[j].nome[k])
+                            {
+                                a = p[i].nome;
+                                float b = p[i].prezzo;
+                                p[i].nome = p[j].nome;
+                                p[i].prezzo = p[j].prezzo;
+                                p[j].prezzo = b;
+                                p[j].nome = a;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Convert.ToChar(p[i].nome[i]);
+                        Convert.ToChar(p[j].nome[i]);
+                        for (int k = 0; k < p[j].nome.Length; k++)
+                        {
+                            if (p[j].nome[k] < p[j].nome[k])
+                            {
+                                a = p[j].nome;
+                                float b = p[j].prezzo;
+                                p[j].nome = p[i].nome;
+                                p[j].prezzo = p[i].prezzo;
+                                p[i].prezzo = b;
+                                p[i].nome = a;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Alfabetico();   
+        }
     }
 }
 
