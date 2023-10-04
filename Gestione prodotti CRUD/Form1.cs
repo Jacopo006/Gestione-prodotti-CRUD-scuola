@@ -183,11 +183,33 @@ namespace Gestione_prodotti_CRUD
                 }
             }
         }
+        public void SommaPrezzo()
+        {
+            float PrezzoTotale = 0;
+            for (int i = 0; i < dim; i++)
+            {
+                PrezzoTotale += p[i].prezzo;
+            }
+            MessageBox.Show("il prezzo totale è :" + PrezzoTotale.ToString());
+        }
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             Alfabetico(); 
             Visualizza();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            SommaPrezzo();
+            Visualizza();
+            
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
