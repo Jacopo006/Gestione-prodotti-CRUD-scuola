@@ -190,7 +190,7 @@ namespace Gestione_prodotti_CRUD
             {
                 PrezzoTotale += p[i].prezzo;
             }
-            MessageBox.Show("il prezzo totale è :" + PrezzoTotale.ToString());
+            MessageBox.Show("Il prezzo totale è :" + PrezzoTotale.ToString());
         }
 
 
@@ -210,6 +210,72 @@ namespace Gestione_prodotti_CRUD
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    float sconto = float.Parse(textBox4.Text);
+        //    float scontoineuro = 0;
+        //    float prezzoscontato = 0;
+        //    for (int i = 0; i < dim; i++)
+        //    {
+        //        scontoineuro = (p[i].prezzo) * sconto;
+        //        prezzoscontato = p[i].prezzo - scontoineuro;
+
+        //    }
+        //    Visualizza();
+        //}
+
+
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+        //    float sconto = float.Parse(textBox4.Text);
+        //    float scontoineuro = 0;
+        //    float prezzoscontato;
+        //    for (int i = 0; i < dim; i++)
+        //    {
+        //        scontoineuro = (p[i].prezzo) * sconto;
+        //        prezzoscontato = p[i].prezzo + scontoineuro;
+
+        //    }
+        //    Visualizza();
+        //}
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            float sconto = float.Parse(textBox4.Text);
+            float prezzoscontato;
+            //scontoineuro = (p[i].prezzo) * sconto;
+            //prezzoscontato = p[i].prezzo - scontoineuro;
+            //p[i].prezzo = prezzoscontato;
+
+            // prezzo : 100 =  x : sconto
+
+            for (int i = 0; i < dim; i++)
+            {
+                prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
+                p[i].prezzo = p[i].prezzo - prezzoscontato;
+            }
+            Visualizza();
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            float sconto = float.Parse(textBox4.Text);
+            float prezzoscontato;
+
+            //scontoineuro = (p[i].prezzo) * sconto;
+            //prezzoscontato = p[i].prezzo + scontoineuro;
+            //p[i].prezzo = prezzoscontato;
+
+            for (int i = 0; i < dim; i++)
+            {
+                prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
+                p[i].prezzo = p[i].prezzo + prezzoscontato;
+            }
+            Visualizza();
+
         }
     }
 }
