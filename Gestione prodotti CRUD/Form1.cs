@@ -138,7 +138,7 @@ namespace Gestione_prodotti_CRUD
             bool trovato= false;
             string B = textBox2.Text;
             int i = 0;
-            while(trovato==false)
+            while(trovato==false) // Ciclo while per cercare l'oggetto nella struct p
             {
                 if (p[i].nome == B)
                 {
@@ -146,7 +146,7 @@ namespace Gestione_prodotti_CRUD
                 }
                 i++;
             }
-            if (trovato == true)
+            if (trovato == true) // Se l'oggetto è stato trovato, lo rimuove dall'array
             {
                 for (int k = i-1; k < dim; k++)
                 {
