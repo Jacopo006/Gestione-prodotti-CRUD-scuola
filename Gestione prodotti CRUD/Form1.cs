@@ -18,6 +18,8 @@ namespace Gestione_prodotti_CRUD
         {
             InitializeComponent();
         }
+
+        // Definizione della struttura Prodotti
         public struct Prodotti
         {
             public string nome;
@@ -26,8 +28,8 @@ namespace Gestione_prodotti_CRUD
 
         public Prodotti[] p; // array di strutture di tipo struct che contiene Nome e Prezzo 
         public int dim; //dichiarazione variabile intera dimensione
-        
 
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             p = new Prodotti[100];
@@ -44,7 +46,7 @@ namespace Gestione_prodotti_CRUD
 
         }
 
-        //funzioni evento
+        // Funzione per aggiungere un prodotto
         private void Aggiunta()
         {
             p[dim].nome = INSERISCI_.Text;
@@ -58,7 +60,7 @@ namespace Gestione_prodotti_CRUD
             Visualizza();
         }
 
-
+        // Funzione per visualizzare i prodotti
         public void Visualizza()
         {
             ELENCO.Items.Clear();
@@ -84,6 +86,8 @@ namespace Gestione_prodotti_CRUD
             Visualizza();
         }
 
+
+        // Funzione per modificare un prodotto
         public void Modifica()
         {
             string a = textBox1.Text;
@@ -133,6 +137,7 @@ namespace Gestione_prodotti_CRUD
             Visualizza();
         }
 
+        // Funzione per cancellare un prodotto
         public void Cancella()
         {
             bool trovato= false;
@@ -162,6 +167,8 @@ namespace Gestione_prodotti_CRUD
         {
 
         }
+
+        // Funzione per ordinare i prodotti in ordine alfabetico
         private void Alfabetico()
         {
             for (int i = 0; i < dim; i++)
@@ -183,6 +190,8 @@ namespace Gestione_prodotti_CRUD
                 }
             }
         }
+
+        // Funzione per calcolare la somma dei prezzi
         public void SommaPrezzo()
         {
             float PrezzoTotale = 0;
@@ -241,6 +250,9 @@ namespace Gestione_prodotti_CRUD
         //    Visualizza();
         //}
 
+
+
+        // Funzione per applicare uno sconto percentuale
         private void button4_Click(object sender, EventArgs e)
         {
             float sconto = float.Parse(textBox4.Text);
@@ -259,7 +271,7 @@ namespace Gestione_prodotti_CRUD
             Visualizza();
         }
 
-
+        // Funzione per applicare un aumento percentuale
         private void button5_Click(object sender, EventArgs e)
         {
             float sconto = float.Parse(textBox4.Text);
@@ -278,6 +290,8 @@ namespace Gestione_prodotti_CRUD
 
         }
 
+
+        // Funzione per salvare la lista su un file di testo
         private void button6_Click(object sender, EventArgs e)
         {
             SalvaFile();
@@ -293,6 +307,8 @@ namespace Gestione_prodotti_CRUD
             sw.Close();
         }
 
+
+        // Funzione per caricare la lista da un file di testo
         private void button7_Click(object sender, EventArgs e)
         {
             StreamReader sw = new StreamReader("lista.txt");
@@ -326,7 +342,7 @@ namespace Gestione_prodotti_CRUD
                     max = p[i].prezzo;
                 }
             }
-            MessageBox.Show($"il prezzo minimo è: {min} e il massimo è: {max}");
+            MessageBox.Show($"il prezzo minimo è: {min} e il massimo è {max}");
         }
 
 
