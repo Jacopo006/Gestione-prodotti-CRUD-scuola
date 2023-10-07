@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,7 @@ namespace Gestione_prodotti_CRUD
 
         public Prodotti[] p; // array di strutture di tipo struct che contiene Nome e Prezzo 
         public int dim; //dichiarazione variabile intera dimensione
-
-
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -277,6 +277,61 @@ namespace Gestione_prodotti_CRUD
             Visualizza();
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SalvaFile();
+            Visualizza();
+        }
+        private void SalvaFile()
+        {
+            StreamWriter sw = new StreamWriter("lista.txt");
+            for (int i = 0; i < dim; i++)
+            {
+                sw.WriteLine(p[i].nome + " " +  p[i].prezzo + "$" );
+            }
+            sw.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            StreamReader sw = new StreamReader("lista.txt");
+            string a = sw.ReadLine();
+            while (a != null) 
+            {
+                ELENCO.Items.Add(a);
+                a = sw.ReadLine();
+            }
+            sw.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MaxMin();
+        }
+
+        private void MaxMin()
+        {
+            float min = 1000000; 
+            float max = 0;       
+
+            for (int i = 0; i < dim; i++)
+            {
+                if (p[i].prezzo < min)
+                {
+                    min = p[i].prezzo;
+                }
+                else if (p[i].prezzo > max)
+                {
+                    max = p[i].prezzo;
+                }
+            }
+            MessageBox.Show($"il prezzo minimo è: {min} e il massimo è: {max}");
+        }
+
+
+
+
     }
 }
 
