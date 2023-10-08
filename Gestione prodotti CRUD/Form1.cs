@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gestione_prodotti_CRUD
@@ -17,6 +19,7 @@ namespace Gestione_prodotti_CRUD
         public Form1()
         {
             InitializeComponent();
+            a = @"file.txt"; //inizializzi il file (nel caso il file non fosse presente te lo crea lui)
         }
 
         // Definizione della struttura Prodotti
@@ -28,8 +31,9 @@ namespace Gestione_prodotti_CRUD
 
         public Prodotti[] p; // array di strutture di tipo struct che contiene Nome e Prezzo 
         public int dim; //dichiarazione variabile intera dimensione
+        public string a;
 
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             p = new Prodotti[100];
@@ -297,34 +301,44 @@ namespace Gestione_prodotti_CRUD
             SalvaFile();
             Visualizza();
         }
-        private void SalvaFile()
-        {
-            StreamWriter sw = new StreamWriter("lista.txt");
-            for (int i = 0; i < dim; i++)
-            {
-                sw.WriteLine(p[i].nome + " " +  p[i].prezzo + "$" );
-            }
-            sw.Close();
-        }
+
+
+
+
+
+        //private void SalvaFile()
+        //{
+        //    StreamWriter sw = new StreamWriter("lista.txt");
+        //    for (int i = 0; i < dim; i++)
+        //    {
+        //        sw.WriteLine(p[i].nome + " " +  p[i].prezzo + "$" );
+        //    }
+        //    sw.Close();
+        //}
 
 
         // Funzione per caricare la lista da un file di testo
+
+
+
         private void button7_Click(object sender, EventArgs e)
         {
-            StreamReader sw = new StreamReader("lista.txt");
-            string a = sw.ReadLine();
-            while (a != null) 
-            {
-                ELENCO.Items.Add(a);
-                a = sw.ReadLine();
-            }
-            sw.Close();
+            
         }
+
+
+
+
+
 
         private void button8_Click(object sender, EventArgs e)
         {
             MaxMin();
         }
+
+
+
+
 
         private void MaxMin()
         {
@@ -346,7 +360,31 @@ namespace Gestione_prodotti_CRUD
         }
 
 
+        public void SalvaFile()
+        {
+            using (StreamWriter sw = new StreamWriter(file.txt, append: true))
+            {
+                for (int i = 0; i < dim; i++)
+                {
+                    sw.WriteLine($"Nome:{p[i].nome};Prezzo:{p[i].prezzo}");
+                }
+                sw.Close();
 
+            }
+
+        }
+        public void Letturadafile()
+        {
+            using (StreamReader rd = new StreamReader(file.txt))
+            {
+                for (int i = 0; i < p.Length; i++)
+                {
+                    string a = rd.ReadLine();
+                    ELENCO.Items.Add(a);
+                }
+                rd.Close();
+            }
+        }
 
     }
 }
