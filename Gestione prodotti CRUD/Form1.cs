@@ -16,10 +16,13 @@ namespace Gestione_prodotti_CRUD
 {
     public partial class Form1 : Form
     {
+        public string file;
+
+
         public Form1()
         {
             InitializeComponent();
-            a = @"file.txt"; //inizializzi il file (nel caso il file non fosse presente te lo crea lui)
+            file = @"file.csv"; //inizializzi il file (nel caso il file non fosse presente te lo crea lui)
         }
 
         // Definizione della struttura Prodotti
@@ -29,9 +32,10 @@ namespace Gestione_prodotti_CRUD
             public float prezzo;
         }
 
+
         public Prodotti[] p; // array di strutture di tipo struct che contiene Nome e Prezzo 
         public int dim; //dichiarazione variabile intera dimensione
-        public string a;
+      
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -299,7 +303,6 @@ namespace Gestione_prodotti_CRUD
         private void button6_Click(object sender, EventArgs e)
         {
             SalvaFile();
-            Visualizza();
         }
 
 
@@ -323,7 +326,7 @@ namespace Gestione_prodotti_CRUD
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            Letturadafile();
         }
 
 
@@ -362,7 +365,7 @@ namespace Gestione_prodotti_CRUD
 
         public void SalvaFile()
         {
-            using (StreamWriter sw = new StreamWriter(file.txt, append: true))
+            using (StreamWriter sw = new StreamWriter(file, append: true))
             {
                 for (int i = 0; i < dim; i++)
                 {
@@ -375,14 +378,15 @@ namespace Gestione_prodotti_CRUD
         }
         public void Letturadafile()
         {
-            using (StreamReader rd = new StreamReader(file.txt))
+            ELENCO.Items.Clear();
+            using (StreamReader gg = new StreamReader(file))
             {
                 for (int i = 0; i < p.Length; i++)
                 {
-                    string a = rd.ReadLine();
+                    string a = gg.ReadLine();
                     ELENCO.Items.Add(a);
                 }
-                rd.Close();
+                gg.Close();
             }
         }
 
