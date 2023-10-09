@@ -229,37 +229,6 @@ namespace Gestione_prodotti_CRUD
             
         }
 
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    float sconto = float.Parse(textBox4.Text);
-        //    float scontoineuro = 0;
-        //    float prezzoscontato = 0;
-        //    for (int i = 0; i < dim; i++)
-        //    {
-        //        scontoineuro = (p[i].prezzo) * sconto;
-        //        prezzoscontato = p[i].prezzo - scontoineuro;
-
-        //    }
-        //    Visualizza();
-        //}
-
-
-        //private void button5_Click(object sender, EventArgs e)
-        //{
-        //    float sconto = float.Parse(textBox4.Text);
-        //    float scontoineuro = 0;
-        //    float prezzoscontato;
-        //    for (int i = 0; i < dim; i++)
-        //    {
-        //        scontoineuro = (p[i].prezzo) * sconto;
-        //        prezzoscontato = p[i].prezzo + scontoineuro;
-
-        //    }
-        //    Visualizza();
-        //}
-
-
-
         // Funzione per applicare uno sconto percentuale
         private void button4_Click(object sender, EventArgs e)
         {
@@ -271,8 +240,6 @@ namespace Gestione_prodotti_CRUD
         {
             SottPercent();
         }
-
-
 
         private void SommaPerCent()
         {
@@ -308,41 +275,16 @@ namespace Gestione_prodotti_CRUD
             SalvaFile();
         }
 
-
-
-
-
-        //private void SalvaFile()
-        //{
-        //    StreamWriter sw = new StreamWriter("lista.txt");
-        //    for (int i = 0; i < dim; i++)
-        //    {
-        //        sw.WriteLine(p[i].nome + " " +  p[i].prezzo + "$" );
-        //    }
-        //    sw.Close();
-        //}
-
-
-        // Funzione per caricare la lista da un file di testo
-
-
-
         private void button7_Click(object sender, EventArgs e)
         {
             Letturadafile();
         }
 
 
-
-
-
-
         private void button8_Click(object sender, EventArgs e)
         {
             MaxMin();
         }
-
-
 
 
 
