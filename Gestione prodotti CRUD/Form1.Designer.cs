@@ -93,9 +93,9 @@
             // 
             // INSERISCI
             // 
-            this.INSERISCI.Location = new System.Drawing.Point(282, 18);
+            this.INSERISCI.Location = new System.Drawing.Point(121, 34);
             this.INSERISCI.Name = "INSERISCI";
-            this.INSERISCI.Size = new System.Drawing.Size(95, 124);
+            this.INSERISCI.Size = new System.Drawing.Size(256, 59);
             this.INSERISCI.TabIndex = 4;
             this.INSERISCI.Text = "INSERISCI NELL\'ELENCO";
             this.INSERISCI.UseVisualStyleBackColor = true;
@@ -126,14 +126,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(10, 241);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 20);
+            this.textBox1.Size = new System.Drawing.Size(236, 20);
             this.textBox1.TabIndex = 8;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // MODIFICAù
             // 
             this.MODIFICAù.AutoSize = true;
-            this.MODIFICAù.Location = new System.Drawing.Point(10, 264);
+            this.MODIFICAù.Location = new System.Drawing.Point(9, 264);
             this.MODIFICAù.Name = "MODIFICAù";
             this.MODIFICAù.Size = new System.Drawing.Size(237, 13);
             this.MODIFICAù.TabIndex = 9;
@@ -144,25 +144,26 @@
             // 
             this.modificadelprodotto.Location = new System.Drawing.Point(10, 280);
             this.modificadelprodotto.Name = "modificadelprodotto";
-            this.modificadelprodotto.Size = new System.Drawing.Size(103, 20);
+            this.modificadelprodotto.Size = new System.Drawing.Size(236, 20);
             this.modificadelprodotto.TabIndex = 10;
             this.modificadelprodotto.TextChanged += new System.EventHandler(this.modificadelprodotto_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 225);
+            this.label1.Location = new System.Drawing.Point(9, 225);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "INSERISCI NOME DEL PRODOTTO DA RICERCARE";
+            this.label1.Size = new System.Drawing.Size(270, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "INSERISCI NOME DEL PRODOTTO DA MODIFICARE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(282, 465);
+            this.button1.Location = new System.Drawing.Point(12, 536);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 124);
+            this.button1.Size = new System.Drawing.Size(263, 59);
             this.button1.TabIndex = 12;
             this.button1.Text = "CANCELLA";
             this.button1.UseVisualStyleBackColor = true;
@@ -181,7 +182,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(21, 492);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 20);
+            this.textBox2.Size = new System.Drawing.Size(202, 20);
             this.textBox2.TabIndex = 16;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -190,23 +191,23 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(18, 465);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 13);
+            this.label3.Size = new System.Drawing.Size(286, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "TROVA L\'ELEMENTO DA CANCELLARE";
+            this.label3.Text = "INSERISCI IL NOME DEL PRODOTTO DA CANCELLARE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(10, 329);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(103, 20);
+            this.textBox3.Size = new System.Drawing.Size(236, 20);
             this.textBox3.TabIndex = 18;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 313);
+            this.label4.Location = new System.Drawing.Point(7, 313);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(249, 13);
             this.label4.TabIndex = 19;
@@ -215,7 +216,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(928, 419);
+            this.button2.Location = new System.Drawing.Point(928, 339);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 74);
             this.button2.TabIndex = 20;
@@ -225,9 +226,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1037, 422);
+            this.button3.Location = new System.Drawing.Point(1037, 339);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 69);
+            this.button3.Size = new System.Drawing.Size(103, 74);
             this.button3.TabIndex = 21;
             this.button3.Text = "TOTALE PREZZO";
             this.button3.UseVisualStyleBackColor = true;
@@ -273,7 +274,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(928, 339);
+            this.button6.Location = new System.Drawing.Point(928, 259);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(103, 74);
             this.button6.TabIndex = 26;
@@ -283,7 +284,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1037, 339);
+            this.button7.Location = new System.Drawing.Point(1037, 259);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(103, 74);
             this.button7.TabIndex = 27;
@@ -293,9 +294,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(928, 250);
+            this.button8.Location = new System.Drawing.Point(928, 170);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 74);
+            this.button8.Size = new System.Drawing.Size(212, 74);
             this.button8.TabIndex = 28;
             this.button8.Text = "TROVA IL MAGGIORE E IL MINORE";
             this.button8.UseVisualStyleBackColor = true;

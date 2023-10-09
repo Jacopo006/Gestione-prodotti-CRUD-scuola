@@ -336,6 +336,10 @@ namespace Gestione_prodotti_CRUD
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
