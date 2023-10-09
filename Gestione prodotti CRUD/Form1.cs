@@ -263,14 +263,22 @@ namespace Gestione_prodotti_CRUD
         // Funzione per applicare uno sconto percentuale
         private void button4_Click(object sender, EventArgs e)
         {
+            SommaPerCent();
+        }
+
+        // Funzione per applicare un aumento percentuale
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SottPercent();
+        }
+
+
+
+        private void SommaPerCent()
+        {
             float sconto = float.Parse(textBox4.Text);
             float prezzoscontato;
-            //scontoineuro = (p[i].prezzo) * sconto;
-            //prezzoscontato = p[i].prezzo - scontoineuro;
-            //p[i].prezzo = prezzoscontato;
-
             // prezzo : 100 =  x : sconto
-
             for (int i = 0; i < dim; i++)
             {
                 prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
@@ -279,16 +287,11 @@ namespace Gestione_prodotti_CRUD
             Visualizza();
         }
 
-        // Funzione per applicare un aumento percentuale
-        private void button5_Click(object sender, EventArgs e)
+
+        private void SottPercent()
         {
             float sconto = float.Parse(textBox4.Text);
             float prezzoscontato;
-
-            //scontoineuro = (p[i].prezzo) * sconto;
-            //prezzoscontato = p[i].prezzo + scontoineuro;
-            //p[i].prezzo = prezzoscontato;
-
             for (int i = 0; i < dim; i++)
             {
                 prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
@@ -378,7 +381,8 @@ namespace Gestione_prodotti_CRUD
         }
         public void Letturadafile()
         {
-            ELENCO.Items.Clear();
+            ELENCO.Items.Clear();//Pulisci la listbox
+
             using (StreamReader gg = new StreamReader(file))
             {
                 for (int i = 0; i < p.Length; i++)
