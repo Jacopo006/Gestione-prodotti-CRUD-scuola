@@ -58,8 +58,17 @@ namespace Gestione_prodotti_CRUD
         private void Aggiunta()
         {
             p[dim].nome = INSERISCI_.Text;
-            p[dim].prezzo = float.Parse(INSERISCI_PREZZO.Text);
-            dim++;
+            float prezzo;
+            if (float.TryParse(INSERISCI_PREZZO.Text, out prezzo)) //Inserimento del prezzo con controllo sul valore numerico
+            {
+                p[dim].prezzo = prezzo;
+                dim++;
+            }
+            else
+            {
+                MessageBox.Show("Il carattere inserito non è un numero");
+            }
+
         }
 
         private void INSERISCI_Click(object sender, EventArgs e)

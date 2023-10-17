@@ -58,7 +58,7 @@
             // 
             // INSERISCI_
             // 
-            this.INSERISCI_.Location = new System.Drawing.Point(12, 34);
+            this.INSERISCI_.Location = new System.Drawing.Point(12, 61);
             this.INSERISCI_.Name = "INSERISCI_";
             this.INSERISCI_.Size = new System.Drawing.Size(100, 20);
             this.INSERISCI_.TabIndex = 0;
@@ -67,7 +67,7 @@
             // NOME_PRODOTTO
             // 
             this.NOME_PRODOTTO.AutoSize = true;
-            this.NOME_PRODOTTO.Location = new System.Drawing.Point(12, 18);
+            this.NOME_PRODOTTO.Location = new System.Drawing.Point(12, 45);
             this.NOME_PRODOTTO.Name = "NOME_PRODOTTO";
             this.NOME_PRODOTTO.Size = new System.Drawing.Size(103, 13);
             this.NOME_PRODOTTO.TabIndex = 1;
@@ -77,7 +77,7 @@
             // PREZZO
             // 
             this.PREZZO.AutoSize = true;
-            this.PREZZO.Location = new System.Drawing.Point(12, 57);
+            this.PREZZO.Location = new System.Drawing.Point(12, 84);
             this.PREZZO.Name = "PREZZO";
             this.PREZZO.Size = new System.Drawing.Size(51, 13);
             this.PREZZO.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             // INSERISCI_PREZZO
             // 
-            this.INSERISCI_PREZZO.Location = new System.Drawing.Point(12, 73);
+            this.INSERISCI_PREZZO.Location = new System.Drawing.Point(12, 100);
             this.INSERISCI_PREZZO.Name = "INSERISCI_PREZZO";
             this.INSERISCI_PREZZO.Size = new System.Drawing.Size(100, 20);
             this.INSERISCI_PREZZO.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             // INSERISCI
             // 
-            this.INSERISCI.Location = new System.Drawing.Point(121, 34);
+            this.INSERISCI.Location = new System.Drawing.Point(121, 61);
             this.INSERISCI.Name = "INSERISCI";
             this.INSERISCI.Size = new System.Drawing.Size(256, 59);
             this.INSERISCI.TabIndex = 4;
@@ -104,7 +104,7 @@
             // ELENCO
             // 
             this.ELENCO.HideSelection = false;
-            this.ELENCO.Location = new System.Drawing.Point(407, 18);
+            this.ELENCO.Location = new System.Drawing.Point(402, 22);
             this.ELENCO.Name = "ELENCO";
             this.ELENCO.Size = new System.Drawing.Size(495, 577);
             this.ELENCO.TabIndex = 5;
@@ -161,7 +161,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 536);
+            this.button1.Location = new System.Drawing.Point(21, 518);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(263, 59);
             this.button1.TabIndex = 12;
@@ -265,7 +265,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(925, 37);
+            this.label5.Location = new System.Drawing.Point(925, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 13);
             this.label5.TabIndex = 25;
