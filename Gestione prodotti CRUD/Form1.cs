@@ -71,6 +71,56 @@ namespace Gestione_prodotti_CRUD
 
         }
 
+        public void Cancella()
+        {
+            bool trovato = false;
+            string B = textBox2.Text;
+            int i = 0;
+            while (trovato == false) // Ciclo while per cercare l'oggetto nella struct p
+            {
+                if (p[i].nome == B)
+                {
+                    trovato = true;
+                }
+                i++;
+            }
+            if (trovato == true) // Se l'oggetto è stato trovato, lo rimuove dall'array
+            {
+                for (int k = i - 1; k < dim; k++)
+                {
+                    p[k].nome = p[k + 1].nome;
+                    p[k].prezzo = p[k + 1].prezzo;
+                }
+
+                dim--;
+            }
+        }
+
+        public void Modifica()
+        {
+
+            string a = textBox1.Text;
+            bool elementoTrovato = false;
+
+            for (int i = 0; i < dim; i++)
+            {
+                if (p[i].nome == a)
+                {
+                    p[i].nome = modificadelprodotto.Text;
+                    elementoTrovato = true;
+                }
+            }
+
+            if (elementoTrovato==true)
+            {
+                MessageBox.Show("Nessun prodotto trovato con il nome inserito");
+            }
+        }
+
+
+
+
+
         private void INSERISCI_Click(object sender, EventArgs e)
         {
             Aggiunta();
@@ -104,22 +154,7 @@ namespace Gestione_prodotti_CRUD
         }
 
 
-        // Funzione per modificare un prodotto
-        public void Modifica()
-        {
-            string a = textBox1.Text;
-
-            for (int i = 0; i < dim; i++)
-            {
-                if (p[i].nome == a)
-                {
-                    p[i].nome = modificadelprodotto.Text;
-                    p[i].prezzo = float.Parse(textBox3.Text);
-                }
-            }
-
-        }
-
+       
 
 
 
@@ -155,30 +190,7 @@ namespace Gestione_prodotti_CRUD
         }
 
         // Funzione per cancellare un prodotto
-        public void Cancella()
-        {
-            bool trovato= false;
-            string B = textBox2.Text;
-            int i = 0;
-            while(trovato==false) // Ciclo while per cercare l'oggetto nella struct p
-            {
-                if (p[i].nome == B)
-                {
-                    trovato = true;
-                }
-                i++;
-            }
-            if (trovato == true) // Se l'oggetto è stato trovato, lo rimuove dall'array
-            {
-                for (int k = i-1; k < dim; k++)
-                {
-                    p[k].nome = p[k + 1].nome;
-                    p[k].prezzo = p[k + 1].prezzo;
-                }
-                
-                dim--;
-            }
-        }
+        
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
@@ -207,6 +219,11 @@ namespace Gestione_prodotti_CRUD
                 }
             }
         }
+
+
+
+
+
 
         // Funzione per calcolare la somma dei prezzi
         public void SommaPrezzo()
@@ -241,41 +258,64 @@ namespace Gestione_prodotti_CRUD
         // Funzione per applicare uno sconto percentuale
         private void button4_Click(object sender, EventArgs e)
         {
-            SommaPerCent();
+            SottPercent();
+            Visualizza();
         }
 
         // Funzione per applicare un aumento percentuale
         private void button5_Click(object sender, EventArgs e)
         {
-            SottPercent();
+            SommaPerCent();
+            Visualizza();
         }
+
+
+
+
 
         private void SommaPerCent()
         {
-            float sconto = float.Parse(textBox4.Text);
-            float prezzoscontato;
-            // prezzo : 100 =  x : sconto
-            for (int i = 0; i < dim; i++)
+            float prezzo;
+            if (float.TryParse(textBox4.Text, out prezzo)) //Inserimento del prezzo con controllo sul valore numerico
             {
-                prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
-                p[i].prezzo = p[i].prezzo - prezzoscontato;
+                float sconto = float.Parse(textBox4.Text);
+                float prezzoscontato;
+                // prezzo : 100 =  x : sconto
+                for (int i = 0; i < dim; i++)
+                {
+                    prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
+                    p[i].prezzo = p[i].prezzo + prezzoscontato;
+                }
             }
-            Visualizza();
-        }
+            else
+            {
+                MessageBox.Show("Il carattere inserito non è un numero");
+            }
 
+        }
 
         private void SottPercent()
         {
-            float sconto = float.Parse(textBox4.Text);
-            float prezzoscontato;
-            for (int i = 0; i < dim; i++)
+            float prezzo;
+            if (float.TryParse(textBox4.Text, out prezzo)) //Inserimento del prezzo con controllo sul valore numerico
             {
-                prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
-                p[i].prezzo = p[i].prezzo + prezzoscontato;
+                float sconto = float.Parse(textBox4.Text);
+                float prezzoscontato;
+                // prezzo : 100 =  x : sconto
+                for (int i = 0; i < dim; i++)
+                {
+                    prezzoscontato = ((p[i].prezzo) * (sconto)) / 100;
+                    p[i].prezzo = p[i].prezzo - prezzoscontato;
+                }
             }
-            Visualizza();
+            else
+            {
+                MessageBox.Show("Il carattere inserito non è un numero");
+            }
 
         }
+        
+
 
 
         // Funzione per salvare la lista su un file di testo
@@ -323,7 +363,7 @@ namespace Gestione_prodotti_CRUD
             {
                 for (int i = 0; i < dim; i++)
                 {
-                    sw.WriteLine($"Nome:{p[i].nome};Prezzo:{p[i].prezzo}");
+                    sw.WriteLine($"Nome: {p[i].nome} ; Prezzo:{p[i].prezzo}");
                 }
                 sw.Close();
 
